@@ -209,7 +209,7 @@ a { color: inherit; text-underline-offset: 0.12em; }
 }
 
 /* Hand-drawn lettering supplied as artwork: the <img> alt carries the words */
-.lettering { margin-block: 0; }
+.lettering { margin-block: 0 1.5rem; }   /* drawn heading, then a small gap, then the text */
 .lettering img { width: 100%; }
 .lettering--caption { width: min(100%, 21.7rem); margin: 0.8rem auto 0; }
 
@@ -377,7 +377,7 @@ a { color: inherit; text-underline-offset: 0.12em; }
 /* 6. Page sections
    -------------------------------------------------------------------------- */
 .hero {
-  width: min(100% - 2 * var(--gutter), var(--illo));
+  width: min(100% - 2 * var(--gutter), var(--measure));   /* same size as the back cover */
   margin: 0 auto;
   padding-top: 3.25rem;
 }
