@@ -211,7 +211,7 @@ a { color: inherit; text-underline-offset: 0.12em; }
 /* Hand-drawn lettering supplied as artwork: the <img> alt carries the words */
 .lettering { margin-block: 0 1.5rem; }   /* drawn heading, then a small gap, then the text */
 .lettering img { width: 100%; }
-.lettering--caption { width: min(100%, 21.7rem); margin: 0.8rem auto 0; }
+.lettering--caption { width: min(100%, 21.8rem); margin: 0.52rem auto 0; }
 
 .lede { font-size: var(--text-base); }
 
@@ -402,7 +402,7 @@ a { color: inherit; text-underline-offset: 0.12em; }
 .story__quote { margin: 0; }
 .illustration--wide img { width: 100%; }
 
-.signature img { width: min(100%, 13rem); margin-inline: auto; }
+.signature img { width: min(100%, 13.375rem); margin-inline: auto; }
 
 .site-footer {
   margin-top: 0;
