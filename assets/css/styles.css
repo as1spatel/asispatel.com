@@ -307,6 +307,7 @@ a { color: inherit; text-underline-offset: 0.12em; }
 /* Offer grid: two books, ruled cells, links underneath */
 .offers {
   display: grid;
+  margin-bottom: 0;   /* sits directly on the footer */
   border-top: var(--rule) solid var(--color-line);
   border-bottom: var(--rule) solid var(--color-line);
 }
@@ -357,7 +358,7 @@ a { color: inherit; text-underline-offset: 0.12em; }
 .signature img { width: min(100%, 13rem); margin-inline: auto; }
 
 .site-footer {
-  margin-top: var(--space-7);
+  margin-top: 0;
   padding: var(--space-6) 0 var(--space-6);
   background: var(--color-accent);
   color: var(--color-on-accent);
@@ -379,16 +380,6 @@ a { color: inherit; text-underline-offset: 0.12em; }
   text-transform: uppercase;
 }
 .footer-mark { width: 4.5rem; margin-inline: auto; }
-
-/* Black strip with orange juice dots under the footer */
-.dots {
-  height: 3rem;
-  background-color: var(--panda);
-  background-image: radial-gradient(circle, var(--orange) 0 5px, transparent 6px);
-  background-size: 67px 67px;
-  background-position: 18px 14px;
-}
-
 
 /* 7. Motion: sections fade up as they scroll into view.
    Only applied when JS is running, and never for reduced-motion users.
