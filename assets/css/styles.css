@@ -376,13 +376,15 @@ a { color: inherit; text-underline-offset: 0.12em; }
 
 /* 6. Page sections
    -------------------------------------------------------------------------- */
-.hero {
-  width: min(100% - 2 * var(--gutter), var(--measure));   /* same size as the back cover */
-  margin: 0 auto;
-  padding-top: 3.25rem;
+.cover {
+  width: min(100% - 2 * var(--gutter), var(--measure));   /* front and back covers, same size */
+  margin-inline: auto;
 }
+.cover img { width: 100%; }
+.hero { padding-top: 3.25rem; margin-bottom: 0; }
 .hero + .section { margin-top: 1.0833rem; }  /* 17px under the cover */
-.hero img { width: 100%; }
+.gap-ready { margin-top: 4.5875rem; }        /* signature to "Ready to get your Story" */
+.gap-next  { margin-top: 4.6875rem; }        /* caption to "You want to choose" */
 
 .measure--illo {
   width: min(100% - 2 * var(--gutter), var(--illo));
@@ -428,6 +430,55 @@ a { color: inherit; text-underline-offset: 0.12em; }
   text-transform: uppercase;
 }
 .footer-mark { width: 5.4rem; margin-inline: auto; }
+
+
+/* 8. Phones (736px and narrower), matched to Carrd on an iPhone 15 Pro (393px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 46rem) {
+  :root {
+    --text-base:    1.03125rem;  /* 16.5px body */
+    --text-md:      1.03125rem;  /* 16.5px Juice intro */
+    --text-lg:      1.375rem;    /* 22px roles */
+    --text-xl:      1.375rem;    /* 22px footer links */
+    --text-link-sm: 1.1458rem;   /* 18.33px The Details */
+    --text-2xl:     1.8333rem;   /* 29.33px names */
+    --text-title:   2.75rem;     /* 44px PEOPLE'S STORIES */
+    --text-3xl:     3.2083rem;   /* 51.33px THE JUICE */
+    --gutter:       1.8333rem;   /* 29.33px: covers, illustrations, stories */
+    --block:        0.9167rem;   /* 14.67px between blocks */
+  }
+  .measure       { width: calc(100% - 5.5rem); }     /* 305px text column */
+  .measure--m1   { width: calc(100% - 4.5833rem); }  /* 320px */
+  .measure--m2   { width: calc(100% - 5.0417rem); }  /* 312px */
+  .measure--illo { width: calc(100% - 2 * var(--gutter)); }
+  .cover         { width: calc(100% - 2 * var(--gutter)); }
+  .hero          { padding-top: 2.75rem; }            /* 44px */
+  .hero + .section { margin-top: 0.9167rem; }
+  .gap-ready     { margin-top: 2.75rem; }
+  .gap-next      { margin-top: 2.8rem; }
+  .signature img { width: 41.15%; }
+
+  .pair { grid-template-columns: 1fr 1fr; gap: 0; margin-top: var(--block); }
+
+  /* Stories: words first, then the artwork full width, then the button */
+  .story { padding-block: 1.8333rem; gap: var(--block); }
+  .story__body { order: 1; padding-top: 0; }
+  .story__media { order: 2; margin-inline: calc(-1 * var(--gutter)); }
+  .story__media img { width: 100%; max-width: none; margin: 0; }
+  .tag { font-size: 0.95rem; }
+
+  .panel { padding: 1.8333rem; }
+  .panel__copy p { line-height: 1.25; }
+
+  .offers { grid-template-columns: 1fr 1fr; margin-top: 2.75rem; }
+  .offers__cell + .offers__cell { border-top: 0; border-left: var(--rule) solid var(--color-line); }
+  .offers__art { padding-top: var(--space-5); }
+  .offers__link { padding: 1.25rem 0.5rem; }
+
+  .footer-legal { font-size: 1.1458rem; }            /* 18.33px */
+  .footer-mark  { width: 4.5833rem; }                /* 73px */
+}
+
 
 /* 7. Motion: sections fade up as they scroll into view.
    Only applied when JS is running, and never for reduced-motion users.
