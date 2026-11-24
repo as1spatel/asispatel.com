@@ -89,11 +89,12 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Overscroll / pull-to-refresh: white above the page, orange below the
-   footer. The page itself sits on body's white background. */
-html:has(.site-footer) {
-  background: linear-gradient(to bottom, var(--bunny) 50%, var(--orange) 50%);
-}
+/* Overscroll / pull-to-refresh colour. Browsers show the page's root
+   background colour when you bounce past an edge, so main.js switches it:
+   white while you're in the top half of the page, orange in the bottom
+   half (behind the footer). The page itself sits on body's white. */
+html { background-color: var(--bunny); }
+html.is-near-footer { background-color: var(--orange); }
 
 body {
   margin: 0;
