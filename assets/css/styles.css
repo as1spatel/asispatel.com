@@ -40,7 +40,7 @@
 
   /* Type scale (fluid: mobile → desktop) */
   --text-sm:   clamp(0.95rem, 0.9rem + 0.2vw, 1.05rem);   /* labels, small print */
-  --text-base: clamp(1.15rem, 1rem + 0.6vw, 1.5rem);      /* body: 24px on desktop */
+  --text-base: clamp(1.15rem, 1rem + 0.6vw, 1.4896rem);   /* body: 23.83px on desktop, as on Carrd */
   --text-lg:   clamp(1.4rem, 1rem + 1.3vw, 2.1667rem);  /* roles: 34.67px */
   --text-md:   clamp(1.25rem, 1rem + 0.7vw, 1.625rem);  /* Juice intro, copyright: 26px */
   --text-xl:   clamp(1.6rem, 1.3rem + 1.2vw, 2.1667rem);  /* footer links: 34.67px */
@@ -107,7 +107,6 @@ body {
   font-family: var(--font-body);
   font-size: var(--text-base);
   line-height: var(--leading-body);
-  -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
