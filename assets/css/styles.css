@@ -41,12 +41,14 @@
   /* Type scale (fluid: mobile → desktop) */
   --text-sm:   clamp(0.95rem, 0.9rem + 0.2vw, 1.05rem);   /* labels, small print */
   --text-base: clamp(1.15rem, 1rem + 0.6vw, 1.5rem);      /* body: 24px on desktop */
-  --text-lg:   clamp(1.4rem, 1.2rem + 0.8vw, 2rem);       /* roles, footer small caps */
-  --text-xl:   clamp(1.6rem, 1.3rem + 1.2vw, 2.25rem);    /* buttons, footer links */
+  --text-lg:   clamp(1.4rem, 1rem + 1.3vw, 2.1667rem);  /* roles: 34.67px */
+  --text-md:   clamp(1.25rem, 1rem + 0.7vw, 1.625rem);  /* Juice intro, copyright: 26px */
+  --text-xl:   clamp(1.6rem, 1.3rem + 1.2vw, 2.1667rem);  /* footer links: 34.67px */
   --text-button:  clamp(1.5rem, 1.2rem + 1vw, 2rem);      /* pill buttons: 32px */
   --text-link-sm: clamp(1.35rem, 1.15rem + 0.6vw, 1.625rem); /* The Details: 26px */
-  --text-2xl: clamp(2.5rem, 1.8rem + 2.6vw, 3.75rem);    /* story names */
-  --text-3xl:  clamp(3.25rem, 1.8rem + 6vw, 7.5rem);      /* section titles */
+  --text-2xl:  clamp(2.25rem, 1.6rem + 2.2vw, 3.25rem);   /* story names: 52px */
+  --text-title: clamp(3rem, 1.5rem + 5.4vw, 6.23rem);     /* PEOPLE'S STORIES: 100px */
+  --text-3xl:  clamp(3.25rem, 1.6rem + 6.6vw, 7.58rem);   /* THE JUICE: 121px */
 
   --leading-tight: 1.05;
   --leading-body:  1.375;
@@ -63,8 +65,10 @@
 
   /* Widths */
   --measure: 32.5rem;   /* 520px reading column */
-  --wide:    73.5rem;   /* 1176px wide container */
-  --gutter:  clamp(1.25rem, 4vw, 2.8rem);
+  --wide:    80.2rem;   /* 1283px wide container */
+  --illo:    43.3rem;   /* 693px illustrations and hero */
+  --gutter:  clamp(1.25rem, 4vw, 3.25rem);
+  --block:   2.1667rem; /* 35px gap between blocks, as on Carrd */
 
   /* Lines, corners, shadows */
   --rule:          3px;
@@ -155,7 +159,7 @@ a { color: inherit; text-underline-offset: 0.12em; }
 
 .full { width: 100%; }
 
-.section { margin-block: var(--space-7); }
+.section { margin-block: var(--block); }
 .section--tight { margin-block: var(--space-5); }
 
 .stack > * + * { margin-top: var(--space-3); }
@@ -175,6 +179,7 @@ a { color: inherit; text-underline-offset: 0.12em; }
   letter-spacing: 0.005em;
 }
 .display--xl { font-size: var(--text-3xl); }
+.display--title { font-size: var(--text-title); }
 .display--lg { font-size: var(--text-2xl); }
 .display--md { font-size: var(--text-xl); }
 
@@ -187,9 +192,9 @@ a { color: inherit; text-underline-offset: 0.12em; }
 }
 
 /* Hand-drawn lettering supplied as artwork: the <img> alt carries the words */
-.lettering { margin-block: 0 var(--space-3); }
+.lettering { margin-block: 0; }
 .lettering img { width: 100%; }
-.lettering--caption { width: min(100%, 21rem); margin-inline: auto; }
+.lettering--caption { width: min(100%, 21.7rem); margin: 0.8rem auto 0; }
 
 .lede { font-size: var(--text-base); }
 
@@ -247,13 +252,14 @@ a { color: inherit; text-underline-offset: 0.12em; }
 /* Tag: small ink label, e.g. BUSINESS STORY */
 .tag {
   display: inline-block;
-  padding: 0.15em 0.55em 0.1em;
+  padding: 0.2em 0.5em 0.15em;
   border-radius: var(--radius-sm);
   background: var(--panda);
   color: var(--bunny);
   box-shadow: 2px 2px 3px rgb(0 0 0 / 0.25);
   font-family: var(--font-hand);
-  font-size: var(--text-sm);
+  font-size: clamp(1rem, 0.9rem + 0.3vw, 1.2rem);
+  line-height: 1.25;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -270,7 +276,7 @@ a { color: inherit; text-underline-offset: 0.12em; }
 /* Ruled title: rule / big Anton title / rule (PEOPLE'S STORIES) */
 .ruled-title {
   display: grid;
-  gap: var(--space-3);
+  gap: 1.3rem;
   text-align: center;
 }
 
@@ -280,17 +286,27 @@ a { color: inherit; text-underline-offset: 0.12em; }
 /* Story card: artwork + button in one column, words in the other */
 .story {
   display: grid;
-  gap: var(--space-5) var(--space-6);
+  gap: var(--space-5) 2.1667rem;   /* 35px between columns */
   align-items: start;
+  margin-block: 0;
+  padding-block: 2.1667rem;        /* 70px between stories */
 }
 .story__media { display: grid; justify-items: center; gap: var(--space-5); }
 .story__media img { width: 100%; }
-.story__body > .tag { margin-bottom: var(--space-2); }
-.story__name { margin-bottom: var(--space-1); }
-.story__role { margin-bottom: var(--space-4); }
+.story__body > .tag { margin-bottom: 0.15rem; }
+.story__name { margin: 0; line-height: 1.25; }
+.story__role { margin: 0 0 0.8rem; line-height: 1.25; }
 
 @media (min-width: 48rem) {
   .story { grid-template-columns: 1fr 1fr; }
+  /* Artwork runs slightly past its column, as on Carrd (694px on a 624px column) */
+  .story__media img {
+    width: calc(100% + 4.3333rem);
+    max-width: none;
+    margin-inline: -3.25rem -1.0833rem;
+  }
+  .story--reverse .story__media img { margin-inline: -1.0833rem -3.25rem; }
+  .story__body { padding-top: 4.3333rem; }  /* words start 69px below the artwork's top */
   .story--reverse .story__media { order: 2; }
 }
 
@@ -298,12 +314,13 @@ a { color: inherit; text-underline-offset: 0.12em; }
 .panel {
   display: grid;
   gap: var(--space-5);
-  padding: var(--space-6) clamp(1.25rem, 4vw, 3.4rem);
+  padding: 2.1667rem clamp(1.25rem, 4vw, 3.25rem);
   border: var(--rule) solid var(--panda);
   background: var(--color-accent);
   color: var(--color-on-accent);
 }
-.panel__copy { display: grid; gap: var(--space-4); }
+.panel__copy { display: grid; gap: 0.8rem; }
+.panel__copy p { font-size: var(--text-md); line-height: 1.25; }
 .panel__action { align-self: start; }
 
 @media (min-width: 48rem) {
@@ -314,6 +331,7 @@ a { color: inherit; text-underline-offset: 0.12em; }
 /* Offer grid: two books, ruled cells, links underneath */
 .offers {
   display: grid;
+  margin-top: 4.3333rem;
   margin-bottom: 0;   /* sits directly on the footer */
   border-top: var(--rule) solid var(--color-line);
   border-bottom: var(--rule) solid var(--color-line);
@@ -325,7 +343,7 @@ a { color: inherit; text-underline-offset: 0.12em; }
 .offers__art { padding: var(--space-6) 0 0; overflow: hidden; }
 .offers__art img { width: 100%; }
 .offers__link {
-  padding: var(--space-4) var(--space-3);
+  padding: 2rem var(--space-3);
   border-top: var(--rule) solid var(--color-line);
   text-align: center;
 }
@@ -341,11 +359,16 @@ a { color: inherit; text-underline-offset: 0.12em; }
 
 /* 6. Page sections
    -------------------------------------------------------------------------- */
-.hero { padding-top: var(--space-6); }
-.hero .book img { width: min(100%, 36rem); }
+.hero {
+  width: min(100% - 2 * var(--gutter), var(--illo));
+  margin: 0 auto;
+  padding-top: 3.25rem;
+}
+.hero + .section { margin-top: 1.0833rem; }  /* 17px under the cover */
+.hero img { width: 100%; }
 
 .measure--illo {
-  width: min(100% - 2 * var(--gutter), 42rem);
+  width: min(100% - 2 * var(--gutter), var(--illo));
   margin-inline: auto;
 }
 .illustration { margin-inline: auto; }
@@ -360,33 +383,34 @@ a { color: inherit; text-underline-offset: 0.12em; }
 @media (min-width: 48rem) { .pair { grid-template-columns: 1fr 1fr; } }
 
 .story__quote { margin: 0; }
-.illustration--wide img { width: min(100%, 75rem); }
+.illustration--wide img { width: 100%; }
 
 .signature img { width: min(100%, 13rem); margin-inline: auto; }
 
 .site-footer {
   margin-top: 0;
-  padding: var(--space-6) 0 var(--space-6);
+  padding: var(--space-6) 0 2.3rem;
   background: var(--color-accent);
   color: var(--color-on-accent);
   text-align: center;
 }
-.site-footer .lettering { margin-bottom: var(--space-5); }
-.site-footer .button { margin-bottom: var(--space-6); }
+.site-footer .lettering { width: min(100%, 65rem); margin: 0 auto 2.75rem; }
+.site-footer .button { margin-bottom: 3.25rem; }
 .footer-links {
   display: grid;
   gap: 0.1rem;
   margin: 0;
-  padding: var(--space-6) 0;
+  padding: 3.25rem 0;
+  line-height: 1.25;
   list-style: none;
 }
 .footer-legal {
-  margin: var(--space-6) 0 var(--space-5);
+  margin: 3.25rem 0 3.9rem;
   font-family: var(--font-display);
-  font-size: var(--text-lg);
+  font-size: var(--text-md);
   text-transform: uppercase;
 }
-.footer-mark { width: 4.5rem; margin-inline: auto; }
+.footer-mark { width: 5.4rem; margin-inline: auto; }
 
 /* 7. Motion: sections fade up as they scroll into view.
    Only applied when JS is running, and never for reduced-motion users.
