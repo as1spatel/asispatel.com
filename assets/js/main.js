@@ -6,6 +6,9 @@
   var root = document.documentElement;
   root.classList.add("js");
 
+  // Lets iPhone Safari show the :active "press" state on buttons
+  document.addEventListener("touchstart", function () {}, { passive: true });
+
   // Keep the copyright year current
   var year = document.querySelector("[data-year]");
   if (year) year.textContent = new Date().getFullYear();

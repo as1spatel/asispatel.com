@@ -241,9 +241,17 @@ a { color: inherit; text-underline-offset: 0.12em; }
     transform var(--duration-press) var(--ease-out),
     box-shadow var(--duration-press) var(--ease-out);
 }
-.button:hover,
+@media (hover: hover) {
+  .button:hover { background-color: var(--orange); }
+}
 .button:focus-visible { background-color: var(--orange); }
-.button:active { transform: translate(6px, 6px); box-shadow: 0 0 0 var(--panda); }
+/* Press: pushes into its shadow and fills orange (mouse click or finger tap) */
+.button:active {
+  transform: translate(6px, 6px);
+  box-shadow: 0 0 0 var(--panda);
+  background-color: var(--orange);
+}
+.button { -webkit-tap-highlight-color: transparent; }
 
 .button--action {
   background: var(--color-action);
@@ -489,6 +497,7 @@ a { color: inherit; text-underline-offset: 0.12em; }
     box-shadow: 5.192px 5.192px 0 var(--panda);
     gap: 0.3em;                          /* arrow sits close to the words */
   }
+  .button:active { transform: translate(5.192px, 5.192px); }
   .story__media .button { width: calc(100% - 2 * var(--gutter)); }
   .panel__action { justify-self: stretch; }
 
