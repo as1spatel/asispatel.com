@@ -13,21 +13,6 @@
   var year = document.querySelector("[data-year]");
   if (year) year.textContent = new Date().getFullYear();
 
-  // Overscroll colour: orange behind the footer, white at the top
-  if (document.querySelector(".site-footer")) {
-    var ticking = false;
-    var updateEdge = function () {
-      var max = document.documentElement.scrollHeight - window.innerHeight;
-      root.classList.toggle("is-near-footer", window.scrollY > max / 2);
-      ticking = false;
-    };
-    window.addEventListener("scroll", function () {
-      if (!ticking) { ticking = true; requestAnimationFrame(updateEdge); }
-    }, { passive: true });
-    window.addEventListener("resize", updateEdge);
-    updateEdge();
-  }
-
   var items = document.querySelectorAll("[data-reveal]");
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 

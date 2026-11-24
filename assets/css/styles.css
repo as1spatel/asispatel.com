@@ -111,12 +111,22 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Overscroll / pull-to-refresh colour. Browsers show the page's root
-   background colour when you bounce past an edge, so main.js switches it:
-   white while you're in the top half of the page, orange in the bottom
-   half (behind the footer). The page itself sits on body's white. */
-html { background-color: var(--bunny); }
-html.is-near-footer { background-color: var(--orange); }
+/* Overscroll / pull-to-refresh colour (Safari on Mac and iPhone).
+   The page canvas is orange, so bouncing past the bottom shows orange.
+   A fixed white layer covers the top half of the window behind the page,
+   so bouncing past the top still shows white. The content itself sits on
+   a white <main>, and the footer is orange. */
+html:has(.site-footer) { background-color: var(--orange); }
+html:has(.site-footer) body { background: transparent; }
+html:has(.site-footer) body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 50% 0;
+  background: var(--bunny);
+  z-index: -1;
+  pointer-events: none;
+}
+html:has(.site-footer) main { background: var(--bunny); }
 
 body {
   margin: 0;
@@ -415,10 +425,6 @@ a { color: inherit; text-underline-offset: 0.12em; }
 .signature img { width: min(100%, 13.375rem); margin-inline: auto; }
 
 .site-footer {
-  /* Paint orange below and beside the footer, so bouncing past the bottom
-     of the page shows orange in every browser (Safari included). A shadow
-     doesn't make the page any longer. */
-  box-shadow: 0 50vh 0 50vh var(--orange);
   margin-top: 0;
   padding: var(--space-6) 0 2.3rem;
   background: var(--color-accent);
