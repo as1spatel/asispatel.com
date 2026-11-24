@@ -111,22 +111,24 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Overscroll / pull-to-refresh colour (Safari on Mac and iPhone).
-   The page canvas is orange, so bouncing past the bottom shows orange.
-   A fixed white layer covers the top half of the window behind the page,
-   so bouncing past the top still shows white. The content itself sits on
-   a white <main>, and the footer is orange. */
-html:has(.site-footer) { background-color: var(--orange); }
+/* Backdrop, as on Carrd: black with orange juice dots, fixed behind the
+   page. It shows in the strip under the footer and whenever you bounce
+   past the top or bottom of the page. The content sits on white. */
+html:has(.site-footer) { background-color: var(--panda); }
 html:has(.site-footer) body { background: transparent; }
 html:has(.site-footer) body::before {
   content: "";
   position: fixed;
-  inset: 0 0 50% 0;
-  background: var(--bunny);
+  inset: 0;
   z-index: -1;
+  background-color: var(--panda);
+  background-image: radial-gradient(circle, var(--orange) 0 5px, transparent 6px);
+  background-size: 67px 67px;
+  background-position: 18px 14px;
   pointer-events: none;
 }
 html:has(.site-footer) main { background: var(--bunny); }
+.dots { height: 3rem; }   /* see-through strip under the footer */
 
 body {
   margin: 0;
