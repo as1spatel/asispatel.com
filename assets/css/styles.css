@@ -89,6 +89,12 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Overscroll / pull-to-refresh: white above the page, orange below the
+   footer. The page itself sits on body's white background. */
+html:has(.site-footer) {
+  background: linear-gradient(to bottom, var(--bunny) 50%, var(--orange) 50%);
+}
+
 body {
   margin: 0;
   background: var(--color-background);
