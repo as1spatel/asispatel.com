@@ -475,8 +475,21 @@ a { color: inherit; text-underline-offset: 0.12em; }
   .offers__art { padding-top: var(--space-5); }
   .offers__link { padding: 1.25rem 0.5rem; }
 
-  .footer-legal { font-size: 1.1458rem; }            /* 18.33px */
+  .footer-legal { font-size: 1.1458rem; margin: 1.8125rem 0 2rem; }  /* 18.33px */
   .footer-mark  { width: 4.5833rem; }                /* 73px */
+
+  /* Section spacing, measured ink-to-ink against Carrd at 393px */
+  .section { margin-bottom: 0; }
+  [style*="--m-mt"] { margin-top: var(--m-mt) !important; }
+  .lettering--caption { margin-top: 0.27rem; }
+  .signature { margin: -0.375rem 0 0; }
+  .gap-ready .lettering { margin-bottom: 0.9375rem; }
+  .ruled-title { gap: 1rem; }
+  .ruled-title + .story { padding-top: 3.45rem; }
+  .site-footer { padding-top: 3.7rem; }
+  .site-footer .lettering { margin-bottom: 1.5rem; }
+  .site-footer .button { margin-bottom: 2.25rem; }
+  .footer-links { padding: 1.8125rem 0; }
 }
 
 
