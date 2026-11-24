@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pattern Library • Drawn To Life • Asis Patel Ltd</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Indie+Flower&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    /* Styles for this documentation page only */
+    .sg-header { padding: var(--space-6) 0 var(--space-5); border-bottom: var(--rule) solid var(--panda); }
+    .sg-header p { max-width: 40rem; }
+    .sg-nav { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4); margin-top: var(--space-4); font-size: var(--text-sm); }
+    .sg-section { padding: var(--space-7) 0 0; }
+    .sg-section > .display { margin-bottom: var(--space-2); }
+    .sg-intro { max-width: 42rem; margin-bottom: var(--space-5); }
+    .sg-label { font-family: var(--font-body); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+    .sg-code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.85rem; }
+    .sg-note { font-size: var(--text-sm); color: #444; }
+
+    .sg-swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(10.5rem, 1fr)); gap: var(--space-4); }
+    .sg-swatch { border: var(--rule) solid var(--panda); box-shadow: var(--shadow-hard); background: var(--bunny); }
+    .sg-swatch__chip { height: 7rem; border-bottom: var(--rule) solid var(--panda); display: flex; align-items: flex-end; padding: var(--space-2); font-size: 2rem; }
+    .sg-swatch__info { padding: var(--space-3); display: grid; gap: 0.15rem; font-size: 0.95rem; line-height: 1.3; }
+    .sg-swatch__name { font-family: var(--font-display); font-size: 1.5rem; text-transform: uppercase; }
+
+    .sg-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+    .sg-table th, .sg-table td { padding: var(--space-2) var(--space-3); border-bottom: 1px solid #ddd; text-align: left; vertical-align: middle; }
+    .sg-table th { border-bottom: var(--rule) solid var(--panda); }
+    .sg-pair { display: inline-block; min-width: 7rem; padding: 0.3rem 0.6rem; border: 1px solid #ccc; font-weight: 700; }
+
+    .sg-font { display: grid; gap: var(--space-3); padding: var(--space-5) 0; border-bottom: 1px solid #ddd; }
+    @media (min-width: 48rem) { .sg-font { grid-template-columns: 16rem 1fr; } }
+    .sg-font__sample--display { font-family: var(--font-display); font-size: clamp(3rem, 8vw, 6rem); line-height: 1; text-transform: uppercase; }
+    .sg-font__sample--body { font-family: var(--font-body); font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1; }
+    .sg-font__sample--hand { font-family: var(--font-hand); font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1; text-transform: uppercase; }
+    .sg-alphabet { font-size: 1.15rem; line-height: 1.5; word-break: break-all; }
+
+    .sg-scale-row { display: grid; gap: var(--space-2); padding: var(--space-4) 0; border-bottom: 1px solid #ddd; align-items: baseline; }
+    @media (min-width: 48rem) { .sg-scale-row { grid-template-columns: 14rem 1fr; } }
+
+    .sg-demo { padding: var(--space-5); border: 1px dashed #bbb; }
+    .sg-demo--accent { background: var(--orange); border-color: var(--orange); }
+    .sg-row { display: flex; flex-wrap: wrap; gap: var(--space-5); align-items: center; }
+
+    .sg-space { display: grid; gap: var(--space-2); }
+    .sg-space__bar { height: 1rem; background: var(--orange); border: 2px solid var(--panda); }
+
+    .sg-lettering { display: grid; gap: var(--space-5); grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr)); }
+    .sg-lettering figure { margin: 0; display: grid; gap: var(--space-2); }
+    .sg-lettering .dark { background: var(--orange); padding: var(--space-3); }
+  </style>
+</head>
+<body>
+
+<header class="sg-header">
+  <div class="wide">
+    <p class="sg-label">Drawn To Life • Asis Patel Ltd</p>
+    <h1 class="display display--xl">Pattern Library</h1>
+    <p>Colours, typography and components for asispatel.com. Everything here comes from <span class="sg-code">assets/css/styles.css</span>. Change a token there and the site and this page both update.</p>
+    <nav class="sg-nav" aria-label="Sections">
+      <a href="#colour">Colour</a>
+      <a href="#contrast">Contrast</a>
+      <a href="#type">Typefaces</a>
+      <a href="#scale">Type scale</a>
+      <a href="#lettering">Hand lettering</a>
+      <a href="#buttons">Buttons &amp; links</a>
+      <a href="#elements">Tags &amp; rules</a>
+      <a href="#components">Components</a>
+      <a href="#spacing">Spacing</a>
+      <a href="#motion">Motion</a>
+      <a href="index.html">← Back to the site</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wide">
+
+  <!-- COLOUR -->
+  <section class="sg-section" id="colour">
+    <h2 class="display display--lg">Colour</h2>
+    <p class="sg-intro">Six fruit colours plus ink and paper. On the site, orange is the brand colour, blueberry marks actions, and black and white carry everything else. The other fruits show up in the drawings and are here for future pages.</p>
+    <div class="sg-swatches">
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--strawberry)">🍓</div><div class="sg-swatch__info"><span class="sg-swatch__name">Strawberry</span><span class="sg-code">#FF0049</span><span class="sg-code">--strawberry</span></div></div>
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--orange)">🍊</div><div class="sg-swatch__info"><span class="sg-swatch__name">Orange</span><span class="sg-code">#FF4900</span><span class="sg-code">--orange</span><span class="sg-note">Brand · footer, The Juice</span></div></div>
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--lemon)">🍋</div><div class="sg-swatch__info"><span class="sg-swatch__name">Lemon</span><span class="sg-code">#FFCB00</span><span class="sg-code">--lemon</span></div></div>
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--apple)">🍏</div><div class="sg-swatch__info"><span class="sg-swatch__name">Apple</span><span class="sg-code">#00B874</span><span class="sg-code">--apple</span></div></div>
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--blueberry)">🫐</div><div class="sg-swatch__info"><span class="sg-swatch__name">Blueberry</span><span class="sg-code">#2558F5</span><span class="sg-code">--blueberry</span><span class="sg-note">Actions · Let's Talk, Get The Juice</span></div></div>
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--grape)">🍇</div><div class="sg-swatch__info"><span class="sg-swatch__name">Grape</span><span class="sg-code">#A72AFF</span><span class="sg-code">--grape</span></div></div>
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--panda);color:#fff">🐼</div><div class="sg-swatch__info"><span class="sg-swatch__name">Panda</span><span class="sg-code">#000000</span><span class="sg-code">--panda</span><span class="sg-note">Text, rules, outlines, shadows</span></div></div>
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--bunny)">🐰</div><div class="sg-swatch__info"><span class="sg-swatch__name">Bunny</span><span class="sg-code">#FFFFFF</span><span class="sg-code">--bunny</span><span class="sg-note">Page background</span></div></div>
+    </div>
+
+    <h3 class="display display--md" style="margin-top:var(--space-6)">Colour roles</h3>
+    <p class="sg-intro">Components use these role names, not the fruit names, so you can re-theme in one place.</p>
+    <table class="sg-table">
+      <thead><tr><th>Token</th><th>Points to</th><th>Used for</th></tr></thead>
+      <tbody>
+        <tr><td class="sg-code">--color-text</td><td>Panda</td><td>All body copy and headings</td></tr>
+        <tr><td class="sg-code">--color-background</td><td>Bunny</td><td>Page background</td></tr>
+        <tr><td class="sg-code">--color-accent</td><td>Orange</td><td>Footer, The Juice panel</td></tr>
+        <tr><td class="sg-code">--color-action</td><td>Blueberry</td><td>Primary call-to-action buttons</td></tr>
+        <tr><td class="sg-code">--color-line</td><td>Panda</td><td>Rules and grid lines</td></tr>
+        <tr><td class="sg-code">--color-on-accent</td><td>Bunny</td><td>Text on orange</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- CONTRAST -->
+  <section class="sg-section" id="contrast">
+    <h2 class="display display--lg">Contrast</h2>
+    <p class="sg-intro">WCAG asks for 4.5:1 for body text and 3:1 for large text (24px+, or 19px+ bold). Anton headings and buttons count as large.</p>
+    <table class="sg-table">
+      <thead><tr><th>Pair</th><th>Ratio</th><th>OK for</th></tr></thead>
+      <tbody>
+        <tr><td><span class="sg-pair" style="background:var(--orange);color:#fff">White on Orange</span></td><td>3.4 : 1</td><td>Large text only: headings, buttons, footer links. Keep body copy on orange at 24px+.</td></tr>
+        <tr><td><span class="sg-pair" style="background:var(--orange);color:#000">Black on Orange</span></td><td>6.2 : 1</td><td>All text</td></tr>
+        <tr><td><span class="sg-pair" style="background:var(--blueberry);color:#fff">White on Blueberry</span></td><td>5.5 : 1</td><td>All text</td></tr>
+        <tr><td><span class="sg-pair" style="background:var(--strawberry);color:#000">Black on Strawberry</span></td><td>5.4 : 1</td><td>All text (white: large only, 3.9)</td></tr>
+        <tr><td><span class="sg-pair" style="background:var(--grape);color:#fff">White on Grape</span></td><td>4.8 : 1</td><td>All text</td></tr>
+        <tr><td><span class="sg-pair" style="background:var(--apple);color:#000">Black on Apple</span></td><td>8.1 : 1</td><td>All text (avoid white: 2.6)</td></tr>
+        <tr><td><span class="sg-pair" style="background:var(--lemon);color:#000">Black on Lemon</span></td><td>13.8 : 1</td><td>All text (never white: 1.5)</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- TYPEFACES -->
+  <section class="sg-section" id="type">
+    <h2 class="display display--lg">Typefaces</h2>
+    <p class="sg-intro">Three Google Fonts: one to shout, one to talk, one to scribble.</p>
+
+    <div class="sg-font">
+      <div><p class="sg-label">Display</p><p class="sg-code">--font-display</p><p>Anton · Regular · always uppercase. Section titles, names, buttons, footer.</p></div>
+      <div><p class="sg-font__sample--display">People's Stories</p><p class="sg-alphabet" style="font-family:var(--font-display)">ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789 → © • &amp;</p></div>
+    </div>
+
+    <div class="sg-font">
+      <div><p class="sg-label">Body</p><p class="sg-code">--font-body</p><p>DM Sans · Regular 400 (500/700 loaded if needed). All reading text.</p></div>
+      <div><p class="sg-font__sample--body">We are only here once.</p><p class="sg-alphabet">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz 0123456789 “ ” ’ …</p></div>
+    </div>
+
+    <div class="sg-font">
+      <div><p class="sg-label">Hand</p><p class="sg-code">--font-hand</p><p>Indie Flower · uppercase. Roles and tags: the small handwritten notes.</p></div>
+      <div><p class="sg-font__sample--hand">Values &amp; Culture Architect</p><p class="sg-alphabet" style="font-family:var(--font-hand)">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789</p></div>
+    </div>
+  </section>
+
+  <!-- SCALE -->
+  <section class="sg-section" id="scale">
+    <h2 class="display display--lg">Type scale</h2>
+    <p class="sg-intro">Sizes are fluid. Each one grows smoothly from mobile to desktop, so there are no jumps at breakpoints. Desktop sizes shown.</p>
+    <div class="sg-scale-row"><div><p class="sg-label">3XL · 120px</p><p class="sg-code">--text-3xl · .display--xl</p></div><p class="display display--xl">The Juice</p></div>
+    <div class="sg-scale-row"><div><p class="sg-label">2XL · 60px</p><p class="sg-code">--text-2xl · .display--lg</p></div><p class="display display--lg">Lisa Nunn</p></div>
+    <div class="sg-scale-row"><div><p class="sg-label">XL · 36px</p><p class="sg-code">--text-xl · .display--md</p></div><p class="display display--md">The Details →</p></div>
+    <div class="sg-scale-row"><div><p class="sg-label">LG · 32px</p><p class="sg-code">--text-lg · .hand</p></div><p class="hand">Imagination Technologist</p></div>
+    <div class="sg-scale-row"><div><p class="sg-label">Base · 24px / 1.375</p><p class="sg-code">--text-base · body</p></div><p style="max-width:var(--measure)">Together through conversation, we peel back the layers and draw out your story for life or business.</p></div>
+    <div class="sg-scale-row"><div><p class="sg-label">SM · 16px</p><p class="sg-code">--text-sm · .tag</p></div><p style="font-size:var(--text-sm)">Small print and labels.</p></div>
+    <p class="sg-note" style="margin-top:var(--space-4)">Reading column: <span class="sg-code">--measure</span> 520px. Wide layout: <span class="sg-code">--wide</span> 1176px.</p>
+  </section>
+
+  <!-- LETTERING -->
+  <section class="sg-section" id="lettering">
+    <h2 class="display display--lg">Hand lettering</h2>
+    <p class="sg-intro">Big headings are drawn by hand and used as images, never set in a font. Wrap them in a heading with <span class="sg-code">.lettering</span>, and put the words in the alt text so screen readers and Google can read them.</p>
+    <pre class="sg-code sg-demo" style="white-space:pre-wrap;margin-bottom:var(--space-5)">&lt;h2 class="lettering"&gt;
+  &lt;img src="assets/images/heading-good-news.webp" width="1100" height="207" alt="The Good News."&gt;
+&lt;/h2&gt;</pre>
+    <div class="sg-lettering">
+      <figure><img src="assets/images/heading-your-life-is-your-story.webp" width="1100" height="313" alt="Your Life is Your Story"><figcaption class="sg-code">heading-your-life-is-your-story</figcaption></figure>
+      <figure><img src="assets/images/heading-good-news.webp" width="1100" height="207" alt="The Good News."><figcaption class="sg-code">heading-good-news</figcaption></figure>
+      <figure><img src="assets/images/heading-you-feel-clear.webp" width="1100" height="343" alt="You Feel Clear."><figcaption class="sg-code">heading-you-feel-clear</figcaption></figure>
+      <figure><img src="assets/images/heading-time-goes-by.webp" width="1100" height="222" alt="Time goes by…"><figcaption class="sg-code">heading-time-goes-by</figcaption></figure>
+      <figure><img src="assets/images/heading-whats-your-story.webp" width="2200" height="449" alt="So…What's Your Story?"><figcaption class="sg-code">heading-whats-your-story (ink)</figcaption></figure>
+      <figure><div class="dark"><img src="assets/images/heading-whats-your-story-white.webp" width="2200" height="449" alt="So…What's Your Story?"></div><figcaption class="sg-code">heading-whats-your-story-white (on orange)</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- BUTTONS -->
+  <section class="sg-section" id="buttons">
+    <h2 class="display display--lg">Buttons &amp; links</h2>
+    <p class="sg-intro">Anton pill with a 3px ink outline and a hard 6px shadow. On hover it presses halfway in, and fully in on click. Use blueberry for the main action in a section.</p>
+    <div class="sg-row sg-demo">
+      <a class="button" href="#buttons">See The Making <span class="arrow" aria-hidden="true">→</span></a>
+      <a class="button button--action" href="#buttons">Let’s Talk <span class="arrow" aria-hidden="true">→</span></a>
+      <a class="link-display" href="#buttons">The Details →</a>
+    </div>
+    <div class="sg-row sg-demo sg-demo--accent" style="margin-top:var(--space-4);color:#fff">
+      <a class="button button--action" href="#buttons">Get The Juice <span class="arrow" aria-hidden="true">→</span></a>
+      <a class="link-display" href="#buttons">Instagram</a>
+    </div>
+    <pre class="sg-code sg-demo" style="white-space:pre-wrap;margin-top:var(--space-4)">&lt;a class="button" href="…"&gt;See The Making &lt;span class="arrow" aria-hidden="true"&gt;→&lt;/span&gt;&lt;/a&gt;
+&lt;a class="button button--action" href="…"&gt;Let’s Talk &lt;span class="arrow" aria-hidden="true"&gt;→&lt;/span&gt;&lt;/a&gt;
+&lt;a class="link-display" href="…"&gt;The Details →&lt;/a&gt;</pre>
+  </section>
+
+  <!-- TAGS & RULES -->
+  <section class="sg-section" id="elements">
+    <h2 class="display display--lg">Tags &amp; rules</h2>
+    <div class="sg-row sg-demo">
+      <span class="tag">Business Story</span>
+      <span class="tag">Life Story</span>
+      <span class="sg-code">&lt;span class="tag"&gt;Business Story&lt;/span&gt;</span>
+    </div>
+    <div class="sg-demo" style="margin-top:var(--space-4)">
+      <hr class="rule">
+      <p class="sg-code" style="margin-top:var(--space-2)">&lt;hr class="rule"&gt; · 3px ink</p>
+    </div>
+    <div class="sg-demo sg-demo--accent" style="margin-top:var(--space-4);color:#fff">
+      <hr class="rule rule--light">
+      <p class="sg-code" style="margin-top:var(--space-2)">&lt;hr class="rule rule--light"&gt; · 3px white, on orange</p>
+    </div>
+  </section>
+
+  <!-- COMPONENTS -->
+  <section class="sg-section" id="components">
+    <h2 class="display display--lg">Components</h2>
+
+    <p class="sg-label" style="margin-top:var(--space-5)">Ruled title · .ruled-title</p>
+    <div class="ruled-title sg-demo">
+      <hr class="rule">
+      <h3 class="display display--xl">People's Stories</h3>
+      <hr class="rule">
+    </div>
+
+    <p class="sg-label" style="margin-top:var(--space-6)">Story card · .story (add .story--reverse to flip sides)</p>
+    <article class="story sg-demo">
+      <div class="story__media">
+        <img src="assets/images/story-robin.webp" width="1200" height="1200" loading="lazy" alt="Illustrated book cover for Robin.">
+        <a class="button" href="#components">See The Making <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+      <div class="story__body">
+        <span class="tag">Life Story</span>
+        <h3 class="display display--lg story__name">Robin</h3>
+        <p class="hand story__role">Optional role line</p>
+        <blockquote class="story__quote"><p>"I know who I am and what to do now."</p></blockquote>
+      </div>
+    </article>
+
+    <p class="sg-label" style="margin-top:var(--space-6)">Signup panel · .panel</p>
+    <div class="panel">
+      <div class="panel__copy">
+        <hr class="rule rule--light">
+        <h3 class="display display--xl">The Juice</h3>
+        <hr class="rule rule--light">
+        <p>Stories on squeezing out who you are into how you earn.</p>
+      </div>
+      <div class="panel__action"><a class="button button--action" href="#components">Get The Juice <span class="arrow" aria-hidden="true">→</span></a></div>
+    </div>
+  </section>
+
+  <!-- SPACING -->
+  <section class="sg-section" id="spacing">
+    <h2 class="display display--lg">Spacing</h2>
+    <p class="sg-intro">One spacing scale for every gap and margin. Sections sit <span class="sg-code">--space-7</span> apart.</p>
+    <div class="sg-space">
+      <div class="sg-scale-row"><span class="sg-code">--space-1 · 4px</span><div class="sg-space__bar" style="width:var(--space-1)"></div></div>
+      <div class="sg-scale-row"><span class="sg-code">--space-2 · 8px</span><div class="sg-space__bar" style="width:var(--space-2)"></div></div>
+      <div class="sg-scale-row"><span class="sg-code">--space-3 · 16px</span><div class="sg-space__bar" style="width:var(--space-3)"></div></div>
+      <div class="sg-scale-row"><span class="sg-code">--space-4 · 24px</span><div class="sg-space__bar" style="width:var(--space-4)"></div></div>
+      <div class="sg-scale-row"><span class="sg-code">--space-5 · 32px</span><div class="sg-space__bar" style="width:var(--space-5)"></div></div>
+      <div class="sg-scale-row"><span class="sg-code">--space-6 · 48px</span><div class="sg-space__bar" style="width:var(--space-6)"></div></div>
+      <div class="sg-scale-row"><span class="sg-code">--space-7 · 72px</span><div class="sg-space__bar" style="width:var(--space-7)"></div></div>
+      <div class="sg-scale-row"><span class="sg-code">--space-8 · 112px</span><div class="sg-space__bar" style="width:var(--space-8)"></div></div>
+    </div>
+  </section>
+
+  <!-- MOTION -->
+  <section class="sg-section" id="motion" style="padding-bottom:var(--space-8)">
+    <h2 class="display display--lg">Motion</h2>
+    <p class="sg-intro">Add <span class="sg-code">data-reveal</span> to any block and it fades up 24px over 0.9s the first time it scrolls into view. Buttons press in over 0.12s. Both switch off for visitors who choose reduced motion.</p>
+    <pre class="sg-code sg-demo" style="white-space:pre-wrap">&lt;section class="section measure" data-reveal&gt; … &lt;/section&gt;</pre>
+  </section>
+
+</main>
+<div class="dots" aria-hidden="true"></div>
+</body>
+</html>
