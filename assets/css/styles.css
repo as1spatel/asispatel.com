@@ -84,6 +84,24 @@
 }
 
 
+/* Desktop (981px and up): fixed sizes, exactly as on Carrd, which doesn't
+   scale type with window width. Below this the fluid sizes above apply. */
+@media (min-width: 61.3125rem) {
+  :root {
+    --text-base:    1.4896rem;  /* 23.83px */
+    --text-md:      1.625rem;   /* 26px */
+    --text-lg:      2.1667rem;  /* 34.67px */
+    --text-xl:      2.1667rem;  /* 34.67px */
+    --text-button:  2rem;       /* 32px */
+    --text-link-sm: 1.625rem;   /* 26px */
+    --text-2xl:     3.25rem;    /* 52px */
+    --text-title:   6.23rem;    /* 99.7px */
+    --text-3xl:     7.58rem;    /* 121px */
+    --gutter:       3.25rem;    /* 52px */
+  }
+}
+
+
 /* 2. Base
    -------------------------------------------------------------------------- */
 *, *::before, *::after { box-sizing: border-box; }
