@@ -415,6 +415,10 @@ a { color: inherit; text-underline-offset: 0.12em; }
 .signature img { width: min(100%, 13.375rem); margin-inline: auto; }
 
 .site-footer {
+  /* Paint orange below and beside the footer, so bouncing past the bottom
+     of the page shows orange in every browser (Safari included). A shadow
+     doesn't make the page any longer. */
+  box-shadow: 0 50vh 0 50vh var(--orange);
   margin-top: 0;
   padding: var(--space-6) 0 2.3rem;
   background: var(--color-accent);
