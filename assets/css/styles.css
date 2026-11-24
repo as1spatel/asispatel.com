@@ -43,7 +43,9 @@
   --text-base: clamp(1.15rem, 1rem + 0.6vw, 1.5rem);      /* body: 24px on desktop */
   --text-lg:   clamp(1.4rem, 1.2rem + 0.8vw, 2rem);       /* roles, footer small caps */
   --text-xl:   clamp(1.6rem, 1.3rem + 1.2vw, 2.25rem);    /* buttons, footer links */
-  --text-2xl:  clamp(2.5rem, 1.8rem + 2.6vw, 3.75rem);    /* story names */
+  --text-button:  clamp(1.5rem, 1.2rem + 1vw, 2rem);      /* pill buttons: 32px */
+  --text-link-sm: clamp(1.35rem, 1.15rem + 0.6vw, 1.625rem); /* The Details: 26px */
+  --text-2xl: clamp(2.5rem, 1.8rem + 2.6vw, 3.75rem);    /* story names */
   --text-3xl:  clamp(3.25rem, 1.8rem + 6vw, 7.5rem);      /* section titles */
 
   --leading-tight: 1.05;
@@ -188,28 +190,30 @@ a { color: inherit; text-underline-offset: 0.12em; }
 /* 5. Components
    -------------------------------------------------------------------------- */
 
-/* Button: Anton pill, ink outline, hard shadow, presses in on hover */
+/* Button: Anton pill, ink outline, hard shadow. Fills with Orange on hover. */
 .button {
   display: inline-flex;
   align-items: center;
-  gap: 0.35em;
-  padding: 0.38em 1.15em 0.42em;
+  gap: 0.5em;
+  padding: 0.7em 1.4em;
   border: var(--rule) solid var(--panda);
   border-radius: var(--radius-pill);
   background: var(--bunny);
   color: var(--panda);
   box-shadow: var(--shadow-hard);
   font-family: var(--font-display);
-  font-size: var(--text-xl);
+  font-size: var(--text-button);
   line-height: 1;
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
   transition:
+    background-color var(--duration-press) ease-out,
     transform var(--duration-press) var(--ease-out),
     box-shadow var(--duration-press) var(--ease-out);
 }
-.button:hover { transform: translate(3px, 3px); box-shadow: var(--shadow-hard-sm); }
+.button:hover,
+.button:focus-visible { background-color: var(--orange); }
 .button:active { transform: translate(6px, 6px); box-shadow: 0 0 0 var(--panda); }
 
 .button--action {
@@ -217,7 +221,8 @@ a { color: inherit; text-underline-offset: 0.12em; }
   color: var(--bunny);
 }
 
-.button .arrow { font-family: var(--font-body); font-weight: 400; }
+/* Thin arrow, as on the original site */
+.arrow { font-family: Arial, Helvetica, sans-serif; font-weight: 400; }
 
 /* Text link in Anton (The Details →, footer links) */
 .link-display {
@@ -228,7 +233,9 @@ a { color: inherit; text-underline-offset: 0.12em; }
   text-decoration: underline;
   text-decoration-thickness: 2px;
 }
-.link-display:hover { text-decoration-thickness: 4px; }
+.link-display:hover,
+.link-display:focus-visible { text-decoration: none; }
+.link-display--sm { font-size: var(--text-link-sm); }
 
 /* Tag: small ink label, e.g. BUSINESS STORY */
 .tag {
