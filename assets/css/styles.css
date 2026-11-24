@@ -478,6 +478,20 @@ a { color: inherit; text-underline-offset: 0.12em; }
   .footer-legal { font-size: 1.1458rem; margin: 1.8125rem 0 2rem; }  /* 18.33px */
   .footer-mark  { width: 4.5833rem; }                /* 73px */
 
+  /* Pill buttons: full width of the text column, as on Carrd */
+  .button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 4.5833rem;                   /* 73.3px */
+    padding: 0 2.2917rem;                /* 36.7px */
+    font-size: 1.375rem;                 /* 22px */
+    box-shadow: 5.192px 5.192px 0 var(--panda);
+    gap: 0.3em;                          /* arrow sits close to the words */
+  }
+  .story__media .button { width: calc(100% - 2 * var(--gutter)); }
+  .panel__action { justify-self: stretch; }
+
   /* Section spacing, measured ink-to-ink against Carrd at 393px */
   .section { margin-bottom: 0; }
   [style*="--m-mt"] { margin-top: var(--m-mt) !important; }
